@@ -4,12 +4,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Web Fundamentals",
     "question": "What is the fundamental difference between the Internet and the Web?",
     "options": [
-      "The Internet is just for websites, while the Web includes email and gaming.",
-      "The Internet is the physical/logical network layer, while the Web is an application built on top of it.",
-      "The Web is a hardware layer, and the Internet is the software layer.",
-      "They are exactly the same thing, just used interchangeably."
+      "The Internet is exclusively for websites, while the Web handles email protocols.",
+      "The Web serves as the hardware layer, and the Internet acts as the software layer.",
+      "The Internet is the underlying physical network, while the Web is an application.",
+      "They are identical infrastructure concepts that are used interchangeably today."
     ],
-    "answer": 1,
+    "answer": 2,
     "hint": "Think of one as the physical roads of a city, and the other as the buildings sitting on those roads."
   },
   {
@@ -43,10 +43,10 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Web Fundamentals",
     "question": "Why is Semantic HTML critical for a website?",
     "options": [
-      "It makes the website load faster on mobile devices.",
-      "It automatically styles the page without needing CSS.",
-      "It provides structure that screen readers and search engine crawlers depend on to understand the page.",
-      "It prevents security vulnerabilities like Cross-Site Scripting (XSS)."
+      "It significantly decreases the loading time of websites on mobile devices.",
+      "It automatically applies visual styling to the page without requiring CSS.",
+      "It provides meaning and structure for screen readers and search engines.",
+      "It prevents common security vulnerabilities like Cross-Site Scripting (XSS)."
     ],
     "answer": 2,
     "hint": "Think about how a blind user's screen reader or a Google bot knows what a <nav> or <header> is compared to a plain <div>."
@@ -69,12 +69,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Client�Server Communication",
     "question": "What is a key characteristic of a \"Thick Client\"?",
     "options": [
-      "It holds significant logic and state locally, communicating with the server mainly through an API.",
-      "It does very little logic locally and mostly displays what the server sends.",
-      "It runs entirely on the backend server.",
-      "It only supports static HTML pages without JavaScript."
+      "It executes minimal local logic and strictly displays server-rendered views.",
+      "It manages significant logic locally and communicates via external APIs.",
+      "It operates entirely on the backend server with no local UI processing.",
+      "It supports only static HTML pages and explicitly disables JavaScript."
     ],
-    "answer": 0,
+    "answer": 1,
     "hint": "A React Single Page Application (SPA) or a native mobile app is \"thick\" because it does a lot of the heavy lifting on the user's device."
   },
   {
@@ -82,12 +82,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Client�Server Communication",
     "question": "Why is \"statelessness\" an important architectural concept for backend servers?",
     "options": [
-      "It forces the server to remember every user indefinitely.",
-      "It allows servers to be scaled horizontally, as any server instance can handle any request.",
-      "It prevents the use of databases entirely.",
-      "It guarantees that the server never crashes."
+      "It allows servers to scale horizontally by processing independent requests.",
+      "It forces the server infrastructure to remember every user indefinitely.",
+      "It completely eliminates the architectural need for any database storage.",
+      "It practically guarantees that the server hardware never experiences crashes."
     ],
-    "answer": 1,
+    "answer": 0,
     "hint": "If a server doesn't have to \"remember\" client state in its own memory, you can easily add 10 more identical servers behind a load balancer."
   },
   {
@@ -95,12 +95,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "HTTP Communication",
     "question": "What does it mean for an HTTP method to be \"idempotent\"?",
     "options": [
-      "The method is encrypted and secure.",
-      "Making the request once or multiple times produces the same result on the server.",
-      "The method can only be used by authenticated administrators.",
-      "The request automatically retries if it fails."
+      "Making the request once or multiple times produces the identical server state.",
+      "The request automatically triggers a background retry if it encounters an error.",
+      "The method can only be successfully executed by authenticated administrators.",
+      "The method is fully encrypted and secured against unauthorized network access."
     ],
-    "answer": 1,
+    "answer": 0,
     "hint": "If you hit a DELETE endpoint 5 times, the resource is still gone, just like hitting it once. The end state doesn't change after the first time."
   },
   {
@@ -121,12 +121,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "HTTP Communication",
     "question": "What was a major improvement introduced in HTTP/2 compared to HTTP/1.1?",
     "options": [
-      "Switching to a UDP-based protocol.",
-      "Multiplexing, allowing many requests to share a single TCP connection.",
-      "Removing the need for HTTP headers.",
-      "Replacing JSON with XML for data transfer."
+      "Implementing multiplexing to share one TCP connection for many requests.",
+      "Transitioning from a TCP-based architecture to a faster UDP-based protocol.",
+      "Removing the fundamental requirement for HTTP headers to reduce payload size.",
+      "Replacing JSON with XML as the primary format for all strict data transfers."
     ],
-    "answer": 1,
+    "answer": 0,
     "hint": "Instead of opening multiple parallel connections per domain, HTTP/2 sends many streams over just one connection at the same time."
   },
   {
@@ -147,12 +147,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "HTTP Communication",
     "question": "What is the difference between a 401 and a 403 HTTP status code?",
     "options": [
-      "401 means \"Not Found\", 403 means \"Bad Request\".",
-      "401 means \"Log in again\" (Unauthorized), 403 means \"Logged in, but no permission\" (Forbidden).",
-      "401 is a client error, 403 is a server error.",
-      "401 indicates rate limiting, 403 indicates a crashed server."
+      "401 indicates \"Not Found\" on the server, while 403 indicates a \"Bad Request\".",
+      "401 indicates API rate limiting, while 403 indicates a completely crashed server.",
+      "401 represents a general client error, while 403 represents a critical server error.",
+      "401 indicates missing authentication, while 403 indicates insufficient permissions."
     ],
-    "answer": 1,
+    "answer": 3,
     "hint": "401 is when the bouncer doesn't know who you are. 403 is when the bouncer knows who you are, but you still aren't on the VIP list."
   },
   {
@@ -160,12 +160,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "HTTP Communication",
     "question": "What is the primary purpose of the \"User-Agent\" request header?",
     "options": [
-      "To identify the user's personal email address.",
-      "To tell the server what types of data the client can read.",
-      "To identify the browser, operating system, and device making the request.",
-      "To send the user's authentication token."
+      "To securely identify the requesting user's verified personal email address.",
+      "To identify the specific browser, operating system, and device making the request.",
+      "To strictly inform the server about the specific data formats the client prefers.",
+      "To securely transmit the active user's encoded authentication token to the API."
     ],
-    "answer": 2,
+    "answer": 1,
     "hint": "It tells the server if you are visiting from Chrome on Windows, or Safari on an iPhone."
   },
   {
@@ -173,12 +173,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "HTTP Communication",
     "question": "When should a developer choose Server-Sent Events (SSE) over WebSockets?",
     "options": [
-      "When building a fast-paced multiplayer game.",
-      "When the data only needs to flow one way (from server to client) like a live feed.",
-      "When the client needs to frequently send messages back to the server.",
-      "When the application requires offline support."
+      "When building a fast-paced, interactive multiplayer online gaming experience.",
+      "When the frontend web application specifically requires robust offline synchronization.",
+      "When the client needs to frequently transmit real-time telemetry back to the server.",
+      "When data only needs to flow continuously in one direction from server to client."
     ],
-    "answer": 1,
+    "answer": 3,
     "hint": "SSE is a one-way street (pushing notifications to a dashboard), while WebSockets are a two-way street."
   },
   {
@@ -186,12 +186,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "APIs and Data Exchange",
     "question": "Why do teams use an API Gateway in a microservices architecture?",
     "options": [
-      "To write all backend logic in a single file.",
-      "To act as a single entry point handling cross-cutting concerns like auth, logging, and rate limiting.",
-      "To convert SQL databases into NoSQL databases.",
-      "To bypass CORS security rules entirely."
+      "To consolidate all distinct backend application business logic into a single codebase.",
+      "To effectively bypass restrictive Cross-Origin Resource Sharing (CORS) security rules.",
+      "To seamlessly convert relational SQL queries into NoSQL document transactions.",
+      "To centralize generic cross-cutting concerns like authentication and rate limiting."
     ],
-    "answer": 1,
+    "answer": 3,
     "hint": "Instead of every small service implementing its own security and rate limits, a \"Gateway\" handles it at the front door."
   },
   {
@@ -212,12 +212,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "APIs and Data Exchange",
     "question": "What is \"Serialization\" in the context of data exchange?",
     "options": [
-      "The process of turning an in-memory object (like a database row) into a JSON string to send over the network.",
-      "The process of validating a user's password.",
-      "The process of encrypting data over HTTPS.",
-      "The process of sorting database records alphabetically."
+      "Sorting raw database records alphabetically based on a specifically defined index.",
+      "Validating a user's inputted password against a securely hashed database record.",
+      "Encrypting sensitive application state data before sending it over a public network.",
+      "Converting a complex in-memory object into a flat string format for transmission."
     ],
-    "answer": 0,
+    "answer": 3,
     "hint": "It's the act of packaging complex memory objects into a flat string format (like JSON) so it can travel across the web."
   },
   {
@@ -251,23 +251,23 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Authentication",
     "question": "What does the \"HttpOnly\" flag do when set on a cookie?",
     "options": [
-      "It forces the cookie to only be sent over HTTPS.",
-      "It blocks JavaScript from reading the cookie, reducing the risk of XSS attacks.",
-      "It prevents the cookie from being used across different sites.",
-      "It ensures the cookie never expires."
+      "It prevents client-side JavaScript from accessing the cookie, mitigating XSS risks.",
+      "It explicitly forces the targeted cookie to only be transmitted over secure HTTPS.",
+      "It strictly prohibits the browser from sending the cookie to cross-origin domains.",
+      "It permanently configures the browser session to ensure the cookie never expires."
     ],
-    "answer": 1,
+    "answer": 0,
     "hint": "It makes the cookie strictly for HTTP transport, hiding it from document.cookie in client-side scripts."
   },
   {
     "id": "q21",
     "topic": "Authentication",
-    "question": "Why do production systems commonly split tokens into a short-lived \"Access Token\" and a long-lived \"Refresh Token\"?",
+    "question": "Why do production systems commonly split tokens into an \"Access Token\" and a \"Refresh Token\"?",
     "options": [
-      "To save database storage space.",
-      "To limit the damage if an access token is leaked, while keeping the user logged in seamlessly via the refresh token.",
-      "Because JSON Web Tokens have a maximum size limit.",
-      "To prevent Cross-Origin Resource Sharing (CORS) errors."
+      "To significantly reduce the overall storage space required in the primary database.",
+      "To limit the risk of leaked access tokens while keeping user sessions uninterrupted.",
+      "Because standard JSON Web Tokens structurally enforce a strict maximum size limit.",
+      "To definitively eliminate Cross-Origin Resource Sharing (CORS) preflight blockages."
     ],
     "answer": 1,
     "hint": "If a hacker steals an Access Token, it becomes useless in 15 minutes. The Refresh Token is kept much safer and gets new Access Tokens."
@@ -290,12 +290,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Security and Performance",
     "question": "What triggers a CORS \"Preflight\" (OPTIONS) request?",
     "options": [
-      "Any standard GET request to load an image.",
-      "A \"non-simple\" request across different origins, like one using PUT, DELETE, or custom Authorization headers.",
-      "A request made entirely within the same domain.",
-      "When the DNS resolution fails."
+      "Any standard GET request executed by the browser rendering engine to load an image.",
+      "A localized network failure that occurs when standard DNS resolution suddenly fails.",
+      "A completely standard HTTP API request executed entirely within the same domain.",
+      "A non-simple cross-origin request, such as those utilizing PUT or custom headers."
     ],
-    "answer": 1,
+    "answer": 3,
     "hint": "The browser checks with the server (\"Is this allowed?\") before sending complex or potentially dangerous cross-origin requests."
   },
   {
@@ -303,10 +303,10 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Security and Performance",
     "question": "In caching, what is the role of an ETag?",
     "options": [
-      "It specifies the exact time a cache entry should expire (TTL).",
-      "It acts as a fingerprint of a resource's content, allowing the server to return \"304 Not Modified\" if the content hasn't changed.",
-      "It encrypts the cached data in the browser.",
-      "It prevents the CDN from storing static assets."
+      "It accurately dictates the precise expiration time (TTL) for a specific cache entry.",
+      "It acts as a content fingerprint to allow servers to return a \"304 Not Modified\".",
+      "It strongly encrypts the cached response data locally within the user's web browser.",
+      "It explicitly commands the Content Delivery Network not to store static file assets."
     ],
     "answer": 1,
     "hint": "The client sends this fingerprint back to the server. If it matches the server's current version, the server doesn't resend the heavy payload."
@@ -355,12 +355,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Data Storage",
     "question": "What is the primary purpose of a database \"Index\"?",
     "options": [
-      "To encrypt sensitive columns in a table.",
-      "To duplicate data across multiple servers for backup.",
-      "To allow the database to jump straight to matching rows instead of scanning the entire table, drastically speeding up queries.",
-      "To enforce referential integrity between tables."
+      "To significantly speed up queries by allowing direct access to matching row locations.",
+      "To actively duplicate stored database records across multiple servers for redundancy.",
+      "To securely encrypt and obfuscate highly sensitive columns within a relational table.",
+      "To strictly enforce structural referential integrity and valid relationships between tables."
     ],
-    "answer": 2,
+    "answer": 0,
     "hint": "It works exactly like the index at the back of a textbook, telling you exactly which page to flip to."
   },
   {
@@ -368,10 +368,10 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Data Storage",
     "question": "Why is Server-Side Validation mandatory, even if you have excellent Client-Side Validation?",
     "options": [
-      "Client-side validation slows down the browser too much.",
-      "Client-side validation can always be bypassed by directly calling the API, so the server must protect itself.",
-      "Server-side validation is required by the HTTP/2 specification.",
-      "Client-side validation only works on mobile devices."
+      "Client-side validation generally slows down modern browser rendering engines excessively.",
+      "Client-side validation can be easily bypassed via direct API calls by malicious users.",
+      "Server-side validation is explicitly required to maintain HTTP/2 protocol compliance.",
+      "Client-side validation relies on outdated APIs that are incompatible with mobile devices."
     ],
     "answer": 1,
     "hint": "A malicious user can just use a tool like Postman to send requests directly to the backend, skipping your frontend forms entirely."
@@ -381,12 +381,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Data Storage",
     "question": "What is a major drawback of \"Offset-based\" pagination on large datasets or fast-changing feeds?",
     "options": [
-      "It is impossible to jump to a specific page.",
-      "It gets slower on large offsets and can skip or repeat items if new data is added between requests.",
-      "It requires a NoSQL database.",
-      "It forces the server to load all records into memory at once."
+      "It makes it completely impossible for end users to jump directly to a specific page number.",
+      "It inherently forces the backend application server to load all database records into memory.",
+      "It strictly mandates that the underlying backend database operates as a NoSQL document store.",
+      "It becomes slower on large offsets and can duplicate items if new data is dynamically added."
     ],
-    "answer": 1,
+    "answer": 3,
     "hint": "If you ask for \"items 20-30\", but 5 new items were just inserted at the top, items that used to be 15-20 shift down and you see them twice."
   },
   {
@@ -394,12 +394,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Background Processing",
     "question": "How does a Webhook differ from a standard REST API request?",
     "options": [
-      "Webhooks use XML, while REST uses JSON.",
-      "In REST you ask for data; in a Webhook, the external service automatically pushes data to you when an event occurs.",
-      "Webhooks do not require an internet connection.",
-      "Webhooks can only be used by frontend applications."
+      "Webhooks strictly utilize XML format, while REST APIs predominantly enforce JSON payloads.",
+      "Webhooks are designed to function locally without requiring any active internet connection.",
+      "REST requires active polling, while Webhooks automatically push data on predefined events.",
+      "Webhooks are restricted by browsers so they can only be consumed by frontend applications."
     ],
-    "answer": 1,
+    "answer": 2,
     "hint": "A REST API is you calling the restaurant to ask if the food is ready. A Webhook is the restaurant calling you the moment the food is ready."
   },
   {
@@ -407,12 +407,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Background Processing",
     "question": "Why should heavy processing NOT be done directly inside a webhook handler endpoint?",
     "options": [
-      "Webhooks only accept GET requests, which cannot have a body.",
-      "The sender usually expects a fast response (e.g., 200 OK); if you take too long, they will assume failure and retry.",
-      "Webhooks are limited to 1 kilobyte of memory.",
-      "Background jobs cannot be triggered from webhooks."
+      "Webhooks only accept basic GET requests, which cannot carry complex data payload bodies.",
+      "Background worker jobs and messaging queues cannot be initialized from active webhook routes.",
+      "Senders expect a fast 200 OK response; delays might trigger unnecessary system retries.",
+      "Webhook endpoint processes are strictly constrained to utilize only 1 kilobyte of system memory."
     ],
-    "answer": 1,
+    "answer": 2,
     "hint": "If you take 30 seconds to process a payment webhook, Stripe will think your server crashed and will hit you with the same event again."
   },
   {
@@ -433,10 +433,10 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Background Processing",
     "question": "Why is \"Structured Logging\" (writing logs as JSON) preferred in modern backend systems?",
     "options": [
-      "It reduces the physical disk space used by 90%.",
-      "It allows centralized logging systems (like ELK) to easily parse, search, and filter logs by specific fields.",
-      "It encrypts the logs automatically.",
-      "It prevents sensitive data from ever being logged."
+      "It predictably reduces the overall physical disk space utilized by logging by approximately 90%.",
+      "It allows centralized logging platforms to easily parse, index, search, and filter records.",
+      "It automatically applies strong cryptographic encryption to all sensitive server error outputs.",
+      "It comprehensively prevents sensitive personal user data from ever being written to log files."
     ],
     "answer": 1,
     "hint": "Searching through millions of free-text sentences is hard. Searching for {\"user_id\": 123, \"level\": \"ERROR\"} is instantaneous."
@@ -459,12 +459,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Testing",
     "question": "In Test-Driven Development (TDD), what is the correct order of the \"Red-Green-Refactor\" cycle?",
     "options": [
-      "Write code (Green), write test (Red), clean up (Refactor).",
-      "Write a failing test (Red), write just enough code to pass it (Green), clean up the code (Refactor).",
-      "Clean up (Refactor), write failing test (Red), write code (Green).",
-      "Write test (Green), clean up (Refactor), break code (Red)."
+      "Write a failing test (Red), write simple code to pass it (Green), clean up the code (Refactor).",
+      "Write functional code (Green), write a failing test (Red), optimize the codebase (Refactor).",
+      "Clean up existing code (Refactor), write a new failing test (Red), complete the feature (Green).",
+      "Write a passing test (Green), optimize the code (Refactor), intentionally break the logic (Red)."
     ],
-    "answer": 1,
+    "answer": 0,
     "hint": "You must prove the test can fail before you write the code to make it pass, then you tidy things up."
   },
   {
@@ -472,12 +472,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Testing",
     "question": "What is a \"Mock\" in the context of automated testing?",
     "options": [
-      "A fake replacement for a real dependency (like a database or API) so the test runs fast and isolated.",
-      "A tool that randomly generates bad user input.",
-      "A script that insults the developer when tests fail.",
-      "A copy of the production database."
+      "A specialized automated utility strictly designed to generate randomized and invalid user inputs.",
+      "A fake replacement for a real external dependency to ensure tests run fast and stay isolated.",
+      "A terminal script plugin that outputs humorous or sarcastic error messages when test suites fail.",
+      "A complete, read-only local copy of the live production database explicitly used for unit testing."
     ],
-    "answer": 0,
+    "answer": 1,
     "hint": "Instead of actually charging a credit card in a test, you use a \"fake\" object that just pretends to succeed."
   },
   {
@@ -485,12 +485,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Deployment and Infrastructure",
     "question": "In deployment strategies, what is a \"Canary Deployment\"?",
     "options": [
-      "Releasing the new version to 100% of users simultaneously.",
-      "Running two identical environments and switching traffic instantly.",
-      "Releasing the new version to a small percentage of users first, watching for errors, then rolling out to everyone.",
-      "Manually copying files to a server via FTP."
+      "Releasing the version to a small subset of users to monitor errors before rolling it out fully.",
+      "Running two identical staging environments and immediately switching all active user traffic.",
+      "Releasing the newly compiled application version to 100% of active users simultaneously.",
+      "Manually transferring compiled production deployment files to a live web server via secure FTP."
     ],
-    "answer": 2,
+    "answer": 0,
     "hint": "Named after the birds used in coal mines, this strategy sends a small group of users ahead to detect danger before committing fully."
   },
   {
@@ -498,12 +498,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Deployment and Infrastructure",
     "question": "Why are \"Environment Variables\" essential for modern web applications?",
     "options": [
-      "They automatically configure the user's browser settings.",
-      "They keep secrets (like API keys and DB URLs) out of the code and allow the same code to run differently in dev vs. production.",
-      "They prevent DNS propagation delays.",
-      "They speed up JavaScript execution in the rendering engine."
+      "They automatically configure and optimize the end-user's local browser rendering preferences.",
+      "They completely eliminate common DNS propagation delays during continuous production deployments.",
+      "They keep secrets out of the codebase and allow distinct configurations per deployment stage.",
+      "They significantly speed up complex JavaScript execution tasks within the server's render engine."
     ],
-    "answer": 1,
+    "answer": 2,
     "hint": "You never want to hardcode a production password into a file that gets committed to Git. Instead, the server provides it at runtime."
   },
   {
@@ -535,14 +535,14 @@ const QUIZ_QUESTIONS_EN = [
   {
     "id": "q42",
     "topic": "Web Fundamentals",
-    "question": "What is a Multi Page Application (MPA)?",
+    "question": "What is a Multi Page Application (MP",
     "options": [
-      "An application that opens multiple browser tabs at once.",
-      "An application where each navigation triggers a fresh request to the server for a completely new HTML page.",
-      "An application built entirely without JavaScript.",
-      "An application where navigation is handled by JavaScript without full page reloads."
+      "An application architecture inherently designed to open multiple browser tabs concurrently.",
+      "An application that is constructed entirely without relying on any form of client-side JavaScript.",
+      "An application where each navigation fetches a completely new HTML page from the backend server.",
+      "An application where view navigation is seamlessly and entirely handled by client-side JavaScript."
     ],
-    "answer": 1,
+    "answer": 2,
     "hint": "Every time you click a link, you see the browser's loading spinner because it's asking the server for a brand new page."
   },
   {
@@ -550,12 +550,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Web Fundamentals",
     "question": "When building accessible websites, when should you use ARIA attributes?",
     "options": [
-      "On every single HTML element to ensure perfect accessibility.",
-      "Only when native semantic HTML tags can't express the necessary accessibility information.",
-      "Instead of CSS to style elements for screen readers.",
-      "Only on <div> elements, never on <button> elements."
+      "On every single standard HTML element to guarantee perfect WCAG compliance and accessibility.",
+      "Exclusively on structural container <div> elements, and never on interactive <button> elements.",
+      "As a direct functional replacement for standard CSS to visually style elements for screen readers.",
+      "Only when native semantic HTML tags cannot adequately express complex accessibility information."
     ],
-    "answer": 1,
+    "answer": 3,
     "hint": "If a native <nav> tag does the job, use it. You only bring in ARIA when the standard tags aren't enough."
   },
   {
@@ -563,12 +563,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Web Fundamentals",
     "question": "Why can a long-running script freeze an entire web page (\"the page is unresponsive\")?",
     "options": [
-      "The browser's JavaScript engine is single-threaded and uses an event loop, meaning it can only do one thing at a time.",
-      "The browser runs out of RAM and crashes the operating system.",
-      "The script disconnects the user from the Wi-Fi.",
-      "The server stops sending HTML until the script finishes."
+      "The backend API server explicitly stops transmitting HTML content until the local client script finishes.",
+      "The browser permanently consumes all available RAM and subsequently crashes the local operating system.",
+      "The intensive processing script automatically disconnects the active user's current internet connection.",
+      "The browser's single-threaded JavaScript engine can strictly only process one primary task at a time."
     ],
-    "answer": 0,
+    "answer": 3,
     "hint": "Because it's \"single-threaded,\" if a heavy calculation is running, clicking a button has to wait in line until it's done."
   },
   {
@@ -576,12 +576,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Security and Performance",
     "question": "What does a \"persistent connection\" (Connection: keep-alive) achieve in HTTP?",
     "options": [
-      "It saves the user's password in the browser permanently.",
-      "It reuses the same TCP connection for multiple requests to avoid the cost of a new handshake every time.",
-      "It prevents the server from ever timing out.",
-      "It upgrades the connection to a WebSocket automatically."
+      "It securely and permanently saves the user's encrypted authentication credentials in the web browser.",
+      "It effectively prevents the backend application server from ever manually timing out idle connections.",
+      "It reuses a TCP connection for multiple requests to avoid repeated initial network handshake overhead.",
+      "It automatically upgrades standard stateless HTTP requests into active full-duplex WebSocket streams."
     ],
-    "answer": 1,
+    "answer": 2,
     "hint": "Instead of saying \"Hello\" and \"Goodbye\" for every single image on a webpage, you say \"Hello\" once and download them all."
   },
   {
@@ -589,10 +589,10 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Security and Performance",
     "question": "What is the purpose of the Strict-Transport-Security (HSTS) header?",
     "options": [
-      "It prevents Cross-Origin Resource Sharing (CORS).",
-      "It forces the browser to only ever contact the site over HTTPS, even if the user types http://.",
-      "It blocks all JavaScript execution on the page.",
-      "It validates the ETag for caching."
+      "It actively prevents unauthorized remote Cross-Origin Resource Sharing (CORS) network requests.",
+      "It forces the browser to exclusively contact the site over encrypted and secure HTTPS connections.",
+      "It strictly blocks all inline and external asynchronous JavaScript execution on the rendered web page.",
+      "It securely validates the returned ETag payload for precise browser-level local resource caching."
     ],
     "answer": 1,
     "hint": "It ensures that no one can accidentally connect to your site over an insecure, unencrypted connection."
@@ -615,12 +615,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Security and Performance",
     "question": "What is the standard defense against a \"session fixation\" attack?",
     "options": [
-      "Encrypting the user's password in the database.",
-      "Generating a brand-new session ID immediately after the user logs in successfully.",
-      "Using an offset-based pagination strategy.",
-      "Disabling cookies entirely and using LocalStorage."
+      "Generating a completely new randomized session ID immediately after a successful user login event.",
+      "Securely encrypting the user's plain-text password before persistently storing it in the database.",
+      "Utilizing a highly optimized and secure offset-based pagination strategy for all authentication tables.",
+      "Disabling session cookies entirely across the application and relying exclusively on local storage."
     ],
-    "answer": 1,
+    "answer": 0,
     "hint": "If an attacker gives you a specific session ID to use, the server should throw it away and hand you a fresh one the moment you prove who you are."
   },
   {
@@ -628,12 +628,12 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Data Storage",
     "question": "In database design, what is \"Normalization\"?",
     "options": [
-      "Structuring relational data to avoid duplicating the same information across multiple tables.",
-      "The process of turning NoSQL documents into SQL tables.",
-      "Caching database queries in Redis.",
-      "Reverting a database to a previous backup state."
+      "Proactively caching frequent and heavy database query results in an external in-memory store like Redis.",
+      "The highly automated internal process of migrating NoSQL document schemas into standard SQL tables.",
+      "Structuring relational data efficiently to systematically avoid duplicating information across multiple tables.",
+      "Reverting a corrupted or unstable database instance back to a previously verified and stable backup state."
     ],
-    "answer": 0,
+    "answer": 2,
     "hint": "Instead of writing the user's home address into every single order they place, you store it once and reference it by ID."
   },
   {
@@ -641,13 +641,208 @@ const QUIZ_QUESTIONS_EN = [
     "topic": "Collaboration and Version Control",
     "question": "What does the git revert command do?",
     "options": [
-      "It completely erases a commit from the project's history.",
-      "It undoes a commit by creating a new, opposite commit, without erasing history.",
-      "It moves changes from the working directory to the staging area.",
-      "It deletes the current branch and switches to main."
+      "It completely and permanently erases a specified previous commit from the active project's Git history.",
+      "It undoes a commit by creating a new, opposite commit without destructively altering the past history.",
+      "It seamlessly moves actively modified files from the current working directory back to the staging area.",
+      "It forcefully deletes the current active development branch and automatically switches the project to main."
     ],
     "answer": 1,
     "hint": "It safely rolls back a mistake by adding a \"fix\" commit on top, rather than dangerously rewriting the past."
+  },
+  {
+    "id": "q51",
+    "topic": "What Is the Web and Why Does It Matter?",
+    "question": "A user opens a website using its domain name. What does DNS help the browser find?",
+    "options": [
+      "The certificate used to verify the website’s identity.",
+      "The route used to forward packets across the network.",
+      "The IP address associated with the requested hostname.",
+      "The HTML document displayed at the requested location."
+    ],
+    "answer": 2,
+    "hint": "Think about what the browser needs before it can contact the destination server."
+  },
+  {
+    "id": "q52",
+    "topic": "Security & Performance",
+    "question": "Which change would make a request cross-origin compared with `https://example.com`?",
+    "options": [
+      "Sending the request to `https://api.example.com`.",
+      "Sending the request to `https://example.com/help`.",
+      "Sending the request to `https://example.com?lang=en`.",
+      "Sending the request to `https://example.com/#contact`."
+    ],
+    "answer": 0,
+    "hint": "An origin is defined by the scheme, hostname, and port."
+  },
+  {
+    "id": "q53",
+    "topic": "APIs and Data Exchange",
+    "question": "A profile page requests account data from an API. What does `await fetch(url)` return when the request succeeds?",
+    "options": [
+      "A JavaScript object containing the parsed response body.",
+      "An HTML element containing the returned server content.",
+      "A string containing the response headers and body.",
+      "A Response object with methods for reading the body."
+    ],
+    "answer": 3,
+    "hint": "Think about why code often calls `.json()` after awaiting `fetch()`."
+  },
+  {
+    "id": "q54",
+    "topic": "HTTP Communication",
+    "question": "An API returns HTTP 404 to a `fetch()` call. How should the application detect this HTTP error?",
+    "options": [
+      "Check whether the returned response body is empty.",
+      "Check `response.ok` or the response’s status code.",
+      "Check whether the returned Content-Type is JSON.",
+      "Check the exception raised automatically by `fetch()`."
+    ],
+    "answer": 1,
+    "hint": "Receiving an HTTP error response is different from failing to reach the server."
+  },
+  {
+    "id": "q55",
+    "topic": "Data Storage",
+    "question": "An API needs to return a large list of products. Why might it use pagination?",
+    "options": [
+      "To reuse earlier results without querying the database.",
+      "To distribute each request across several database servers.",
+      "To return a limited portion of the results per request.",
+      "To send the results in a compressed transfer format."
+    ],
+    "answer": 2,
+    "hint": "Consider how much data a client needs to display one page of results."
+  },
+  {
+    "id": "q56",
+    "topic": "Security & Performance",
+    "question": "A search endpoint builds SQL by joining user input directly into a query string. Which change best reduces SQL injection risk?",
+    "options": [
+      "Use parameterized queries to pass input separately from SQL.",
+      "Use browser validation to reject punctuation before submission.",
+      "Use HTTPS to encrypt the input sent to the server.",
+      "Use JSON to encode the input before building SQL."
+    ],
+    "answer": 0,
+    "hint": "The database needs to distinguish query instructions from user-provided values."
+  },
+  {
+    "id": "q57",
+    "topic": "Data Storage",
+    "question": "Two database updates belong to one bank transfer. What is the main benefit of wrapping them in a transaction?",
+    "options": [
+      "Other requests can read the changes before they are committed.",
+      "Repeating the transfer request leaves the balances unchanged.",
+      "Both updates are scheduled to execute at the same time.",
+      "Both updates commit together or are rolled back together."
+    ],
+    "answer": 3,
+    "hint": "Consider what should happen if the second update fails."
+  },
+  {
+    "id": "q58",
+    "topic": "HTTP Communication",
+    "question": "A server returns HTTP 429 with a `Retry-After` header. What should the client do?",
+    "options": [
+      "Refresh its access token before repeating the same request.",
+      "Wait for the indicated period before retrying the request.",
+      "Request a smaller response before repeating the same request.",
+      "Open another connection before retrying the same request."
+    ],
+    "answer": 1,
+    "hint": "Think about what the server is communicating about the request rate."
+  },
+  {
+    "id": "q59",
+    "topic": "Security & Performance",
+    "question": "A website loads the same logo for users in several countries. How can a CDN reduce loading time?",
+    "options": [
+      "By keeping cached copies at locations closer to users.",
+      "By storing the logo inside each user’s session cookie.",
+      "By rendering the logo on the application’s database server.",
+      "By bundling the logo into each API response payload."
+    ],
+    "answer": 0,
+    "hint": "Consider the distance the file travels before reaching the browser."
+  },
+  {
+    "id": "q60",
+    "topic": "Background Processing",
+    "question": "A payment provider may deliver the same webhook more than once. How should the receiver avoid processing the payment twice?",
+    "options": [
+      "Return a successful response before checking the event contents.",
+      "Create a new internal event ID for every received delivery.",
+      "Record processed event IDs and check for duplicate deliveries.",
+      "Process events in the order of their arrival timestamps."
+    ],
+    "answer": 2,
+    "hint": "Consider how the receiver can recognize an event it has already handled."
+  },
+  {
+    "id": "q61",
+    "topic": "Testing & Quality Assurance",
+    "question": "Which task is most suitable for a unit test?",
+    "options": [
+      "Checking a checkout flow across the browser and payment service.",
+      "Checking a database migration against a running database instance.",
+      "Checking a deployed API through its public network endpoint.",
+      "Checking a price calculation function with controlled input values."
+    ],
+    "answer": 3,
+    "hint": "Think about the smallest piece of behavior that can be tested in isolation."
+  },
+  {
+    "id": "q62",
+    "topic": "Collaboration & Version Control",
+    "question": "A developer runs `git commit` successfully. What has happened at this point?",
+    "options": [
+      "The changes have been uploaded to the remote repository.",
+      "A snapshot of staged changes has been saved locally.",
+      "The branch has been merged into the main branch.",
+      "A deployment has been triggered on the production server."
+    ],
+    "answer": 1,
+    "hint": "Think about the separate roles of `commit` and `push`."
+  },
+  {
+    "id": "q63",
+    "topic": "Security & Performance",
+    "question": "Why is a content hash often included in a JavaScript filename, such as `app.a81f.js`?",
+    "options": [
+      "To let browsers check who published the JavaScript file.",
+      "To let browsers reconstruct the file after a partial download.",
+      "To change the resource URL when the file content changes.",
+      "To choose a file version based on the browser’s capabilities."
+    ],
+    "answer": 2,
+    "hint": "Think about how a browser distinguishes a cached file from a newer version."
+  },
+  {
+    "id": "q64",
+    "topic": "Deployment & Infrastructure",
+    "question": "A frontend bundle contains a private API secret. Why is moving it into a build-time environment variable not enough to protect it?",
+    "options": [
+      "The value may still be included in the files sent to browsers.",
+      "The value becomes part of the domain’s public DNS records.",
+      "The value is copied into browser cookies during deployment.",
+      "The value is added to outgoing HTTP headers by the browser."
+    ],
+    "answer": 0,
+    "hint": "Consider where the value ends up after the frontend build is generated."
+  },
+  {
+    "id": "q65",
+    "topic": "What Is the Web and Why Does It Matter?",
+    "question": "A page contains several “Read more” links for different articles. What would make these links clearer for screen reader users?",
+    "options": [
+      "Giving each link a larger clickable area around its text.",
+      "Applying a distinct color to each link within the list.",
+      "Opening each linked article in a separate browser tab.",
+      "Giving each link a descriptive name that identifies its article."
+    ],
+    "answer": 3,
+    "hint": "A user may navigate through a list of links without hearing the surrounding paragraphs."
   }
 ];
 
@@ -674,7 +869,23 @@ const QUIZ_TOPIC_BY_ID = {
   q41:'What Is the Web and Why Does It Matter?', q42:'What Is the Web and Why Does It Matter?',
   q43:'What Is the Web and Why Does It Matter?', q44:'What Is the Web and Why Does It Matter?',
   q45:'HTTP Communication', q46:'HTTP Communication', q47:'HTTP Communication',
-  q48:'Authentication & User Management', q49:'Data Storage', q50:'Collaboration & Version Control'
+  q48:'Authentication & User Management', q49:'Data Storage', q50:'Collaboration & Version Control',
+  q51: "What Is the Web and Why Does It Matter?",
+  q52: "Security & Performance",
+  q53: "APIs and Data Exchange",
+  q54: "HTTP Communication",
+  q55: "Data Storage",
+  q56: "Security & Performance",
+  q57: "Data Storage",
+  q58: "HTTP Communication",
+  q59: "Security & Performance",
+  q60: "Background Processing",
+  q61: "Testing & Quality Assurance",
+  q62: "Collaboration & Version Control",
+  q63: "Security & Performance",
+  q64: "Deployment & Infrastructure",
+  q65: "What Is the Web and Why Does It Matter?"
+
 };
 
 QUIZ_QUESTIONS_EN.forEach(question=>{
